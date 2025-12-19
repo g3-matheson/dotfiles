@@ -7,6 +7,9 @@ return
 				win = {
 					style = nil,
 					backdrop = false,
+					wo = {
+						winhighlight = "",
+					}
         		},
 			},
 		}

@@ -7,4 +7,4 @@ foo.*
 *.log
 data
 kitty-themes/
-
+nvim/lua/plugins/example.lua
