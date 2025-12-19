@@ -1,4 +1,4 @@
 - install and configure vim-visual-multi
 https://github.com/mg979/vim-visual-multi
 
-- configure top and bottom bars with better colors
+- figure out .tex workflow --> TeX compiler can be configured to open external tool to view .pdf
