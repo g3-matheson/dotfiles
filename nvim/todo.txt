@@ -1,0 +1,4 @@
+- install and configure vim-visual-multi
+https://github.com/mg979/vim-visual-multi
+
+- configure top and bottom bars with better colors

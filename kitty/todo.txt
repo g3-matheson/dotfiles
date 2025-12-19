@@ -1,0 +1,2 @@
+- create your own better theme that matches kanagawa black colors
+	- there seems to be some sort of limitation on which colors can actually be used, so figure out what those restrictions are and create within those bounds
