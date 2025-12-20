@@ -8,3 +8,4 @@ foo.*
 data
 kitty-themes/
 nvim/lua/plugins/example.lua
+practice.cpp
