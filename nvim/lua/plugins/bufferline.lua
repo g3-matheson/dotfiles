@@ -1,83 +1,85 @@
 return {
   {
     "akinsho/bufferline.nvim",
-    opts = function(_, opts)
-      local kanagawa_colors = require("kanagawa.colors").setup()
-      local palette = kanagawa_colors.palette
-      
-      opts.highlights = {
-        fill = {
-          bg = "#000000",
-        },
-        background = {
-          bg = "#000000",
-          fg = palette.fujiGray,
-        },
-        buffer_visible = {
-          bg = "#000000",
-          fg = palette.fujiWhite,
-        },
-        buffer_selected = {
-          bg = "#000000",
-          fg = palette.crystalBlue,
-          bold = true,
-          italic = false,
-        },
-        tab = {
-          bg = "#000000",
-          fg = palette.fujiGray,
-        },
-        tab_selected = {
-          bg = "#000000",
-          fg = palette.crystalBlue,
-        },
-        tab_close = {
-          bg = "#000000",
-          fg = palette.autumnRed,
-        },
-        close_button = {
-          bg = "#000000",
-          fg = palette.fujiGray,
-        },
-        close_button_visible = {
-          bg = "#000000",
-          fg = palette.fujiWhite,
-        },
-        close_button_selected = {
-          bg = "#000000",
-          fg = palette.autumnRed,
-        },
-        separator = {
-          bg = "#000000",
-          fg = "#000000",
-        },
-        separator_visible = {
-          bg = "#000000",
-          fg = "#000000",
-        },
-        separator_selected = {
-          bg = "#000000",
-          fg = "#000000",
-        },
-        indicator_selected = {
-          bg = "#000000",
-          fg = palette.crystalBlue,
-        },
-        modified = {
-          bg = "#000000",
-          fg = palette.autumnYellow,
-        },
-        modified_visible = {
-          bg = "#000000",
-          fg = palette.autumnYellow,
-        },
-        modified_selected = {
-          bg = "#000000",
-          fg = palette.autumnYellow,
-        },
-      }
-      
-      return opts
-    end,
+    enabled = false,
+    --opts = function(_, opts)
+    --  local kanagawa_colors = require("kanagawa.colors").setup()
+    --  local palette = kanagawa_colors.palette
+
+    --  opts.highlights = {
+    --    fill = {
+    --      bg = "#000000",
+    --    },
+    --    background = {
+    --      bg = "#000000",
+    --      fg = palette.fujiGray,
+    --    },
+    --    buffer_visible = {
+    --      bg = "#000000",
+    --      fg = palette.fujiWhite,
+    --    },
+    --    buffer_selected = {
+    --      bg = "#000000",
+    --      fg = palette.crystalBlue,
+    --      bold = true,
+    --      italic = false,
+    --    },
+    --    tab = {
+    --      bg = "#000000",
+    --      fg = palette.fujiGray,
+    --    },
+    --    tab_selected = {
+    --      bg = "#000000",
+    --      fg = palette.crystalBlue,
+    --    },
+    --    tab_close = {
+    --      bg = "#000000",
+    --      fg = palette.autumnRed,
+    --    },
+    --    close_button = {
+    --      bg = "#000000",
+    --      fg = palette.fujiGray,
+    --    },
+    --    close_button_visible = {
+    --      bg = "#000000",
+    --      fg = palette.fujiWhite,
+    --    },
+    --    close_button_selected = {
+    --      bg = "#000000",
+    --      fg = palette.autumnRed,
+    --    },
+    --    separator = {
+    --      bg = "#000000",
+    --      fg = "#000000",
+    --    },
+    --    separator_visible = {
+    --      bg = "#000000",
+    --      fg = "#000000",
+    --    },
+    --    separator_selected = {
+    --      bg = "#000000",
+    --      fg = "#000000",
+    --    },
+    --    indicator_selected = {
+    --      bg = "#000000",
+    --      fg = palette.crystalBlue,
+    --    },
+    --    modified = {
+    --      bg = "#000000",
+    --      fg = palette.autumnYellow,
+    --    },
+    --    modified_visible = {
+    --      bg = "#000000",
+    --      fg = palette.autumnYellow,
+    --    },
+    --    modified_selected = {
+    --      bg = "#000000",
+    --      fg = palette.autumnYellow,
+    --    },
+    --  }
+
+    --  return opts
+    --end,
   },
 }
+
