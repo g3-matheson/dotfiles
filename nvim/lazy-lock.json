@@ -3,9 +3,9 @@
   "blink.cmp": { "branch": "main", "commit": "b19413d214068f316c78978b08264ed1c41830ec" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "ce8d176faa4643e026e597ae3c31db59b63cef09" },
-  "clangd_extensions.nvim": { "branch": "main", "commit": "b67cc417d9020fb4b83d46662351b4d16894905e" },
+  "clangd_extensions.nvim": { "branch": "main", "commit": "6fd7f12df71a04dd9ec398fc63aaa23fbe9f525f" },
   "cmake-tools.nvim": { "branch": "master", "commit": "f34418d7aa57c730ee91b3e45e7612978506fcf3" },
-  "conform.nvim": { "branch": "master", "commit": "41715945edf518ca73a9bd63ab6cdc23dd5c7b33" },
+  "conform.nvim": { "branch": "master", "commit": "328c2f1dda56f933d3337a1316e1020ba30ba6aa" },
   "crates.nvim": { "branch": "main", "commit": "ac9fa498a9edb96dc3056724ff69d5f40b898453" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
@@ -38,6 +38,6 @@
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
   "ts-comments.nvim": { "branch": "main", "commit": "123a9fb12e7229342f807ec9e6de478b1102b041" },
   "venv-selector.nvim": { "branch": "main", "commit": "58bae72c84b9f7f864c879ec1896e384296f9ffb" },
-  "vimtex": { "branch": "master", "commit": "aed184681f177ae6071e56cd7a2b9441261fca52" },
+  "vimtex": { "branch": "master", "commit": "c6e2162066db4ceb44774f9bfb79fe97a4c25e71" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
