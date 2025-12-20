@@ -1,0 +1,9 @@
+*** TODO-Tree-like comments:
+
+TODO: something to do
+HACK: hacky code
+WARN: warning
+PERF: performance issue
+NOTE: note something
+FIX: fix this
+BUG: known bug
