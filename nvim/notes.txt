@@ -1,5 +1,4 @@
-*** TODO-Tree-like comments:
-
+#### TODO-Tree-like comments:
 TODO: something to do
 HACK: hacky code
 WARN: warning
@@ -7,3 +6,64 @@ PERF: performance issue
 NOTE: note something
 FIX: fix this
 BUG: known bug
+
+---
+
+#### bash nvim commands:
+nvim -r       -> list available swap (recovery) files
+fg            -> re-open suspended nvim (Ctrl-Z)
+
+#### nvim commands
+ZZ [or] !wq   -> save and quit
+:e            -> restore to saved version
+:q!           -> quit without saving
+:w!           -> overwrite existing file
+:w (newfile)  -> save with new filename
+
+C, D, Y       -> same as c$, d$, y$ (not cc,dd,yy)
+D             -> same as d$
+R             -> overwrite
+~             -> change case and move to next letter
+X             -> delete to the left of the cursor
+xp            -> transpose 2 chars
+[n]i/a [text] -> repeats [text] [n] times
+[n] cl        -> use instead of [n] s since this is bound to seach
+
+----- SCREEN MOVEMENT
+
+Scrolling the screen:
+^F            -> Scroll forward a screen
+^D            -> Scroll forward half a screen
+^B            -> Scroll back a screen
+^U            -> Scroll back half a screen
+
+Reposition the screen:
+z enter       -> Move current line to top of screen
+z .           -> Move current line to center of screen
+z -           -> Move current line to bottom of screen
+Can also use these with numbers:
+[n] z enter   -> Move line [n] to top of screen
+
+Movement within the screen:
+M             -> moves to middle of the screen
+H/L           -> moves to top/bottom of screen (but remapped by lazyvim to buffer swap)
+
+-------- TEXT MOVEMENT
+Line Movements:
++ [or] enter  -> move to first non-blank char of next line
+-             -> move to first non-blank char of previous line
+^ [or] _      -> move to first non-blank char of current line
+[n] |         -> move to [n]th column of current line or last if n > max
+
+Text Block Movements:
+( [or] )      -> move to beginning of current/next sentence
+{ [or] }      -> move to beginning of current/next paragraph
+[[ [or] ]]    -> move to beginning of current/next section
+
+To find the end of a sentence, vim looks for punctuation: ? . or !
+  -> the end of the sentence is when punctuation is followed by at least 2 spaces
+     or last non-blank char on a line, or \n and a space (or 2 \n)
+
+A paragraph is text up until the next blank line
+
+
