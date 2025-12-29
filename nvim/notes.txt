@@ -9,8 +9,18 @@ BUG: known bug
 
 ---
 
+------ GIT CONFLICT KEYS
+co            -> choose ours
+ct            -> choose theirs
+cb            -> choose both
+c0            -> choose none
+]x            -> move to previous conflict
+[x            -> move to next conflict
+
+
 #### bash nvim commands:
 nvim -r       -> list available swap (recovery) files
+nvim -r [file]-> open buffer of [file] to recover
 fg            -> re-open suspended nvim (Ctrl-Z)
 
 #### nvim commands
@@ -54,6 +64,7 @@ Line Movements:
 -             -> move to first non-blank char of previous line
 ^ [or] _      -> move to first non-blank char of current line
 [n] |         -> move to [n]th column of current line or last if n > max
+[n]G          -> move to line [n]
 
 Text Block Movements:
 ( [or] )      -> move to beginning of current/next sentence
@@ -65,5 +76,25 @@ To find the end of a sentence, vim looks for punctuation: ? . or !
      or last non-blank char on a line, or \n and a space (or 2 \n)
 
 A paragraph is text up until the next blank line
+
+------ SEARCHING
+c[or]d ?[or]/ [word]   -> delete/change found word
+f/F [char]             -> move to next/last occurrence of char
+t/T [char]             -> move to char before next / after previous occurrence of char
+;/,                    -> repeat find command in same/opposite direction
+
+------ REGISTERS
+"[n]p         -> paste n-th register (up to 9, 1 = last, 2 = second-last...)
+"[char][n]yy   -> yank [n] lines into register [char]
+"[char]p/P    -> paste contents of saved register [char]
+can also do things like "[char]dw / dd / d} etc.
+** use the capitalized version of [char] to APPEND to that register.
+
+------- BOOKMARKS
+m[char]       -> mark current pos with [char]
+'[char]       -> move to start of line marked by [char]
+''[char]      -> return to start of line of previous mark or context after a move
+`[char]       -> move to exact location marked by [char]
+``[char]      -> return to exact position of previous mark or context after a move
 
 
