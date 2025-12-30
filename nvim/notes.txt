@@ -23,13 +23,14 @@ nvim -r       -> list available swap (recovery) files
 nvim -r [file]-> open buffer of [file] to recover
 fg            -> re-open suspended nvim (Ctrl-Z)
 
-#### nvim commands
+------- SAVING/LOADING/QUITTING
 ZZ [or] !wq   -> save and quit
 :e            -> restore to saved version
 :q!           -> quit without saving
 :w!           -> overwrite existing file
 :w (newfile)  -> save with new filename
 
+------- EDITING
 C, D, Y       -> same as c$, d$, y$ (not cc,dd,yy)
 D             -> same as d$
 R             -> overwrite
@@ -40,7 +41,6 @@ xp            -> transpose 2 chars
 [n] cl        -> use instead of [n] s since this is bound to seach
 
 ----- SCREEN MOVEMENT
-
 Scrolling the screen:
 ^F            -> Scroll forward a screen
 ^D            -> Scroll forward half a screen
