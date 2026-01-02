@@ -141,5 +141,88 @@ nvim [file1] [file2]
 can also use % as:
 :w %.new                 -> save to [current-file-name].new (includes extension though)
 
------------- GLOBAL REPLACEMENT
+------------ LOCAL REPLACEMENT
+:s/old/new/               -> replace on current line
+:s/old/new/g              -> replace all occurrences on current line
+:50,100s/old/new/g        -> replace all occurences on lines 50-100
+:1,$s/old/new/g           -> whole file
+:%s/old/new/g             -> whole file
 
+:1,30s/old/new/gc         -> also "confirm" all changes automatically
+if not using 'c' then each match is prompted:
+  (y/n/a/q/l/^E/^Y)
+  y   -> substitute
+  n   -> skip
+  a   -> substitute this match and remaining
+  q   -> quit
+  l   -> substitute and quit
+  ^E  -> scroll screen up
+  ^Y  -> scroll screen down
+  ESC -> quit
+
+:help s_flags       -> more info
+
+----- Manual find and replace [which] -> [that]
+/which
+cwthat ESC
+n       -> next (repeat search)
+n       -> skip one
+.       -> repeat change
+etc.
+
+---------- GLOBAL REPLACEMENT
+:g/[pattern]/ [command]         -> find all lines with [pattern] and perform [command]
+:g/# FIXME/d                    -> delete all lines with # FIXME
+:g/# FIXME/s/FIXME/DONE/        -> change all FIXME to DONE, add /g to the end to do all instances on the line(s)
+
+if the g and s pattern are the same you can leave it out:
+:g/editer/s//editor/g   ==   :%s/editer/editor/g
+
+------- REGULAR EXPRESSIONS
+we can use regexp in /args/, e.g:
+:%s/\(That\) or \(this\)/\2 or \1/
+:s/\(abcd\)\1/alphabet-soup/          -> \1 in /search/ predicate turns abcdabcd = alphabet-soup
+
+----- Metacharacters in SEARCH string
+.     -> match any char except newline
+*     -> match zero or more of the next char
+^     -> following regexp must be at the start of the line
+$     -> when used at the end, require the regexp to be at the end of the line
+[ ]   -> match any character in the brackets, [A-Z], [0-9], [:;A-Za-z()]
+[.abc.] -> treat abc as a unit
+/< /> -> match characters at the beginning (\<) or end (\>) of a word
+\     -> escape metachar
+
+-- POSIX groups:
+[:alnum:] Alphanumeric characters
+[:alpha:] Alphabetic characters
+[:blank:] Space and tab characters only
+[:cntrl:] Control characters
+[:digit:] Numeric characters
+[:graph:] Printable and visible (nonspace) characters
+[:lower:] Lowercase characters
+[:print:] Printable characters (includes whitespace)
+[:punct:] Punctuation characters
+[:space:] All whitespace characters (space, tab, newline, vertical tab, etc.)
+[:upper:] Uppercase characters
+[:xdigit:] Hexadecimal digits
+
+----- Metacharacters in REPLACEMENT string
+\n          -> replace \n with nth group from search
+&           -> replace & with the entire text matched
+:%s/Washington/&, George/   -> replaces "Washington" with "Washington, George"
+\u [or] \l  -> upper/lower case the next char (can be used as e.g \u\n, which only affects first char)
+\U [or] \L  -> upper/lower case all chars
+\           -> escape metachar
+
+---- Tricks
+if you need to find/replace something like a filename with / characters, you can use a different delimeter:
+:%s;/user1/tim;/home/time;g     -> ; is the delimeter instead of /
+
+&       -> press to repeat previous substitution
+
+repeat the previous substitution on a different search:
+:s/red/blue/
+:/green
+:~
+---> the :~ is equivalent to :s/green/blue
