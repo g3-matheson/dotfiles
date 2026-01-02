@@ -19,6 +19,11 @@ return {
       },
     }
 
+    -- Explicitly set the engine
+    vim.g.vimtex_compiler_latexmk_engines = {
+      _ = "-xelatex",
+    }
+
     -- PDF Viewer settings
     vim.g.vimtex_view_method = "zathura"
 

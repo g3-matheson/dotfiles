@@ -139,7 +139,5 @@ nvim [file1] [file2]
 :e!                   -> discard edits and return to last saved version of current file
 
 can also use % as:
-:w %.new                 -> save to [current-file-name].new (includes extension though)
-
------------- GLOBAL REPLACEMENT
+:w new%                 -> save to new[current-file-name] (includes extension though)
 
