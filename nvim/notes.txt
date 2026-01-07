@@ -59,6 +59,10 @@ M             -> moves to middle of the screen
 H/L           -> moves to top/bottom of screen (but remapped by lazyvim to buffer swap)
 
 -------- TEXT MOVEMENT
+Word movements:
+#             -> previous instance of current word
+*             -> next instance of current word
+
 Line Movements:
 + [or] enter  -> move to first non-blank char of next line
 -             -> move to first non-blank char of previous line
@@ -178,20 +182,39 @@ etc.
 if the g and s pattern are the same you can leave it out:
 :g/editer/s//editor/g   ==   :%s/editer/editor/g
 
+:g!       -> lines that do NOT contain [pattern]
+:v        -> alias of :g!
+
 ------- REGULAR EXPRESSIONS
 we can use regexp in /args/, e.g:
 :%s/\(That\) or \(this\)/\2 or \1/
 :s/\(abcd\)\1/alphabet-soup/          -> \1 in /search/ predicate turns abcdabcd = alphabet-soup
 
+use \v at the start of the regex if you want to use |, ?, =, + without escaping them
 ----- Metacharacters in SEARCH string
-.     -> match any char except newline
-*     -> match zero or more of the next char
-^     -> following regexp must be at the start of the line
-$     -> when used at the end, require the regexp to be at the end of the line
-[ ]   -> match any character in the brackets, [A-Z], [0-9], [:;A-Za-z()]
-[.abc.] -> treat abc as a unit
-/< /> -> match characters at the beginning (\<) or end (\>) of a word
-\     -> escape metachar
+.                 -> match any char except newline
+*                 -> match zero or more of the previous char
+\+                -> match one or more of the previous char
+\?                -> match zero or one of previous char
+\{n\}             -> match n occurences
+\{n,\}            -> match n or more occurences
+\{n,m\}           -> match n to m occurences (inclusive)
+^                 -> following regexp must be at the start of the line
+$                 -> when used at the end, require the regexp to be at the end of the line
+[ ]               -> match any character in the brackets, [A-Z], [0-9], [:;A-Za-z()]
+[.abc.]           -> treat abc as a unit
+(a\|b)            -> match a or b or as a 'global or'
+pattern1\|pattern2
+/< />             -> match characters at the beginning (\<) or end (\>) of a word
+\(.*\)            -> fighting one-eyed kirby: capture the rest of the line to a group
+\([0-9]\+\)       -> match and capture any sequence of numbers
+\                 -> escape metachar
+
+--- Lookahead assertion with @:
+/foo\(bar\)\@=     -> find foo followed by bar
+/\vfoo(bar)@=
+/foo\(bar\)\@!     -> find food NOT followed by bar
+/\vfoo(bar)@!
 
 -- POSIX groups:
 [:alnum:] Alphanumeric characters
@@ -213,6 +236,7 @@ $     -> when used at the end, require the regexp to be at the end of the line
 :%s/Washington/&, George/   -> replaces "Washington" with "Washington, George"
 \u [or] \l  -> upper/lower case the next char (can be used as e.g \u\n, which only affects first char)
 \U [or] \L  -> upper/lower case all chars
+\e [or] \E  -> end \U or \L application
 \           -> escape metachar
 
 ---- Tricks
@@ -226,3 +250,50 @@ repeat the previous substitution on a different search:
 :/green
 :~
 ---> the :~ is equivalent to :s/green/blue
+
+---- Block Moves
+:g /[find]/[start],[end] move [location]
+example:
+:g /<syntax>/.,/<description>/-1 move /<parameter>/-1
+where /<description>/ searches for descripion then -1 moves up a line
+
+
+------ Customizing Vim
+:set [option]       -> set [option] to true
+:set no[option]     -> set [option] to false
+:set [option]!      -> toggle [option]
+:set [option]?      -> see current value of [option]
+:set all            -> see options in use
+
+------------ Executing UNIX Commands
+:![command]         -> run unix [command]
+:!pwd/ls etc.
+:r !date            -> read in current date
+:r !sort [file]     -> sorts [file]
+
+:$r !aspell list < %    -> use UNIX spellcheck on current file, read in at the bottom
+                        -> add | sort -u for a sorted list of misspelled words
+
+:96,99!sort         -> sort lines 96-99
+
+------ Abbreviations
+:ab [abbr] [phrase]     -> define [abbr] => [phrase] (phrase can't contain abbr)
+can also put these in config:
+vim.cmd('ab what what')
+vim.cmd('ab npc non-player character')
+
+:unab [abbr]            -> delete the [abbr]
+:ab                     -> list current abbreviations
+
+------- Mappings
+:map [key(s)] [sequence]     -> define [key(s)] as [sequence] of editing commands
+--> probably shouldn't use this, have macros anyway...
+
+:map <leader>[key(s)] [sequence]
+:let mapleader="X"
+
+:unmap [key(s)]
+if you want to use a protected key like Enter, Esc, precede them with Ctrl+V
+if you want to use F-12: #1-12
+
+

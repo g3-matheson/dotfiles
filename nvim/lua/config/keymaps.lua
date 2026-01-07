@@ -20,3 +20,7 @@ end, { desc = "Terminal (horizontal bottom)" })
 -- Window navigation
 vim.keymap.set("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window" })
 vim.keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window" })
+
+-- swap $ and ^ for intuitive navigation
+vim.keymap.set({ "n", "v", "o" }, "$", "^", { desc = "Go to first non-blank character" })
+vim.keymap.set({ "n", "v", "o" }, "^", "$", { desc = "Go to end of line" })
