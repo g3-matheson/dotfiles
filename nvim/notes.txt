@@ -17,7 +17,6 @@ c0            -> choose none
 ]x            -> move to previous conflict
 [x            -> move to next conflict
 
-
 #### bash nvim commands:
 nvim -r       -> list available swap (recovery) files
 nvim -r [file]-> open buffer of [file] to recover
@@ -295,5 +294,3 @@ vim.cmd('ab npc non-player character')
 :unmap [key(s)]
 if you want to use a protected key like Enter, Esc, precede them with Ctrl+V
 if you want to use F-12: #1-12
-
-
