@@ -1,0 +1,40 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/catgirl.txt",
+    "color": {
+      "1": "38;2;100;230;255",
+      "2": "38;2;255;180;210",
+      "3": "38;2;255;255;255"
+    },
+    "type": "auto"
+  },
+  "display": {
+    "size" : { "binaryPrefix" : "si" }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "38;2;255;180;210",
+        "at": "38;2;100;230;255",
+        "host": "38;2;255;180;210"
+      }
+    },
+    "separator",
+    {"type" : "datetime", "key" : "datetime", "keyColor" : "38;2;100;230;255" },
+    {"type" : "os", "key" : "os", "keyColor" : "38;2;100;230;255" },
+    {"type" : "wm", "key" : "wm", "format" : "{1} {5}", "keyColor" : "38;2;255;180;210" },
+    {"type" : "packages", "key" : "bloat count", "keyColor" : "38;2;255;180;210" },
+    {"type" : "editor", "key" : "editor", "keyColor" : "38;2;255;255;255" },
+    {"type" : "terminal", "key" : "terminal", "keyColor" : "38;2;255;255;255" },
+    {"type" : "shell", "key" : "shell", "keyColor" : "38;2;255;180;210" },
+    {"type" : "font", "key" : "font", "format": "Custom Iosevka Nerd Font", "keyColor" : "38;2;255;180;210" },
+    {"type" : "memory", "key" : "ram", "keyColor" : "38;2;100;230;255" },
+    {"type" : "disk", "key" : "ssd",  "format" : "{1} / {2} {3}", "keyColor" : "38;2;100;230;255" },
+    "break",
+    "break",
+    "break",
+    "colors"
+  ]
+}
