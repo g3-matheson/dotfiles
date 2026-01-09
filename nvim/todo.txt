@@ -1,2 +1,1 @@
-- figure out .tex workflow --> TeX compiler can be configured to open external tool to view .pdf
-  --- pdf viewer: https://pwmt.org/projects/zathura/screenshots/
+-- re-write nvim/notes.txt as .tex & .pdf
