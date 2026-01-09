@@ -7,7 +7,10 @@ NOTE: note something
 FIX: fix this
 BUG: known bug
 
----
+--- NEO TREE
+Shift-P       -> toggle Previewing files
+Backspace     -> go up a level
+.             -> make this folder root
 
 ------ GIT CONFLICT KEYS
 co            -> choose ours
