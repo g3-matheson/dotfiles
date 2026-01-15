@@ -31,7 +31,7 @@
     {"type" : "shell", "key" : "shell", "keyColor" : "38;2;255;180;210" },
     {"type" : "font", "key" : "font", "format": "Custom Iosevka Nerd Font", "keyColor" : "38;2;255;180;210" },
     {"type" : "memory", "key" : "ram", "keyColor" : "38;2;100;230;255" },
-    {"type" : "disk", "key" : "ssd",  "format" : "{1} / {2} {3}", "keyColor" : "38;2;100;230;255" },
+    {"type" : "disk", "key" : "ssd",  "format" : "{1} / {2} ({3})", "keyColor" : "38;2;100;230;255" },
     "break",
     "break",
     "break",

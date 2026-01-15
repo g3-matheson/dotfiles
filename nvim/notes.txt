@@ -12,6 +12,9 @@ Shift-P       -> toggle Previewing files
 Backspace     -> go up a level
 .             -> make this folder root
 
+--- WINDOWS
+[n]^W <[or]>  -> make current window [n] columns thinner [or] wider
+
 ------ GIT CONFLICT KEYS
 co            -> choose ours
 ct            -> choose theirs

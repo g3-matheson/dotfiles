@@ -8,6 +8,13 @@ return {
         fsharp = {}, -- Don't use fantomas for F#
         cs = { "csharpier" }, -- Keep csharpier for C# if you want it
       },
+      formatters = {
+        csharpier = {
+          condition = function(self, ctx)
+            return not vim.endswith(ctx.filename, ".csx")
+          end,
+        },
+      },
     },
   },
   -- Disable F# LSP from lang.dotnet extra
