@@ -1,0 +1,17 @@
+Zathura Controls:
+j/k         -> move vertical
+h/l         -> move horizontal
+
+^D/U        -> move half page vertical
+^Y/T        -> move half page horizontal
+
+^B/F        -> move full page vertical
+
+gg/Sh-G     -> first/last page
+
+(Sh)/       -> search
+
+100=+       -> zoom to level where ^B/F will work
+
+d           -> split view
+^R      -> Reverse Colors
