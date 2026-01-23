@@ -26,6 +26,8 @@ return {
           vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#000000", fg = "#E6C384" })
           vim.api.nvim_set_hl(0, "VertSplit", { fg = "#1a1a1a" })
 
+          vim.api.nvim_set_hl(0, "CursorLine", { bg = "#111111" }) -- Change this color
+
           -- git signs colors
           vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "#080808", fg = "#76946A" }) -- green
           vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "#080808", fg = "#DCA561" }) -- yellow/orange
