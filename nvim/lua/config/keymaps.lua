@@ -22,5 +22,6 @@ vim.keymap.set("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window" })
 vim.keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window" })
 
 -- swap $ and ^ for intuitive navigation
-vim.keymap.set({ "n", "v", "o" }, "$", "^", { desc = "Go to first non-blank character" })
-vim.keymap.set({ "n", "v", "o" }, "^", "$", { desc = "Go to end of line" })
+-- removing these since they correspond to regex key chars and i might get confused
+--vim.keymap.set({ "n", "v", "o" }, "$", "^", { desc = "Go to first non-blank character" })
+--vim.keymap.set({ "n", "v", "o" }, "^", "$", { desc = "Go to end of line" })
