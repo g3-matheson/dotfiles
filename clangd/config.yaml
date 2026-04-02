@@ -1,0 +1,4 @@
+If:
+  PathMatch: .*\.(cpp|cc|cxx|h|hpp|tpp)$
+CompileFlags:
+  Add: [-std=c++26]
