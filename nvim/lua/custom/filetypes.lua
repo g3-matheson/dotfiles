@@ -12,3 +12,9 @@ vim.filetype.add({
   },
 })
 
+vim.filetype.add({
+  extension = {
+    usda = "usda",
+    usd = "usda",
+  },
+})
