@@ -1,0 +1,7 @@
+1) bear:
+  use: bear -- scons
+2) intercept-build:
+  ships with LLVM, similar to bear:
+  use: intercept-build scons
+
+One Mac-specific note: bear on macOS uses DYLD_INSERT_LIBRARIES to intercept compiler calls, which can be blocked by System Integrity Protection (SIP) in some cases. If bear produces an empty or incomplete compile_commands.json, that's likely why — scons-compiledb would be the fallback.
