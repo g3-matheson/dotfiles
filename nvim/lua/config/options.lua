@@ -11,6 +11,8 @@ vim.opt.numberwidth = 1
 
 vim.g.lazyvim_colorscheme = "kanagawa-wave"
 
+vim.opt.showtabline = 0
+
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.showbreak = "↪ "

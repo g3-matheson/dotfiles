@@ -5,7 +5,7 @@ return {
     -- stylua: ignore
     keys = {
       { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "Todo" },
-      { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME", "TEST" } }) end, desc = "Todo/Fix/Fixme/Test" },
+      { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME", "TEST", "HACK" } }) end, desc = "Todo/Fix/Fixme/Test" },
     },
   },
 }

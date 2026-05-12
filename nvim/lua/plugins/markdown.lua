@@ -6,4 +6,12 @@ return {
   opts = {
     completions = { lsp = { enabled = true } },
   },
+  init = function()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*.md",
+      callback = function()
+        vim.cmd("%s/\\s\\+$//e")
+      end,
+    })
+  end,
 }

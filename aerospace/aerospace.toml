@@ -1,0 +1,105 @@
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+accordion-padding = 0
+automatically-unhide-macos-hidden-apps = true
+
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
+
+[mode.main.binding]
+
+# apps — Hyprland-ish
+cmd-t = '''exec-and-forget open -na "Kitty"'''
+cmd-z = '''exec-and-forget open -na "Zen Browser"'''
+cmd-e = '''exec-and-forget open -na "Finder"'''
+cmd-r = '''exec-and-forget open -na "Raycast"'''
+cmd-c = 'close'
+
+# floating / fullscreen / layout
+cmd-v = 'layout floating tiling'
+cmd-f = 'fullscreen'
+cmd-p = 'layout accordion tiles'
+cmd-s = 'layout tiles horizontal vertical'
+
+# focus: vim
+cmd-h = 'focus left'
+cmd-j = 'focus down'
+cmd-k = 'focus up'
+cmd-l = 'focus right'
+
+# focus: arrows
+cmd-left = 'focus left'
+cmd-down = 'focus down'
+cmd-up = 'focus up'
+cmd-right = 'focus right'
+
+# move windows: vim
+cmd-shift-h = 'move left'
+cmd-shift-j = 'move down'
+cmd-shift-k = 'move up'
+cmd-shift-l = 'move right'
+
+# resize: arrows, Hyprland-ish
+cmd-shift-left = 'resize width -50'
+cmd-shift-right = 'resize width +50'
+cmd-shift-down = 'resize height +50'
+cmd-shift-up = 'resize height -50'
+
+# workspaces
+cmd-1 = 'workspace 1'
+cmd-2 = 'workspace 2'
+cmd-3 = 'workspace 3'
+cmd-4 = 'workspace 4'
+cmd-5 = 'workspace 5'
+cmd-6 = 'workspace 6'
+cmd-7 = 'workspace 7'
+cmd-8 = 'workspace 8'
+cmd-9 = 'workspace 9'
+cmd-0 = 'workspace 10'
+
+# move window to workspace
+cmd-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
+cmd-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
+cmd-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
+cmd-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+cmd-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+cmd-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+cmd-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+cmd-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+cmd-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+cmd-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
+
+# scratchpad-ish replacement
+cmd-q = 'workspace scratch'
+cmd-shift-s = 'move-node-to-workspace scratch --focus-follows-window'
+
+# workspace cycling
+cmd-tab = 'workspace-back-and-forth'
+cmd-shift-tab = 'focus-back-and-forth'
+
+# reload
+cmd-shift-r = 'reload-config'
+
+# reasonable floating rules
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Save|Open|Export|Import'
+run = ['layout floating', 'resize smart +200']
