@@ -1,3 +1,13 @@
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  callback = function()
+    local arg = vim.fn.argv(0)
+    if arg ~= "" and vim.fn.isdirectory(arg) == 1 then
+      vim.cmd("cd " .. vim.fn.fnameescape(vim.fn.fnamemodify(arg, ":p")))
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "text", "markdown" },
   callback = function()

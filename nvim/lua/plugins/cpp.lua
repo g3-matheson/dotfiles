@@ -19,7 +19,9 @@ return {
       servers = {
         clangd = {
           cmd = {
-            "clangd",
+            vim.fn.filereadable(vim.fn.expand("~/dotfiles/nvim/scripts/clangd-wrapper")) == 1
+              and vim.fn.expand("~/dotfiles/nvim/scripts/clangd-wrapper")
+              or "clangd",
             "--background-index",
             "--clang-tidy",
             "--header-insertion=iwyu",

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## cd with fd & fzf
+cdf() {
+  cd "$(fd -t d | fzf)"
+}
+
+## fuzzy find into open with nvim
+nvimf() {
+  nvim "$(fd | fzf)"
+}
