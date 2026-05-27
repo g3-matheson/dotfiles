@@ -10,4 +10,4 @@ kitty-themes/
 nvim/lua/plugins/example.lua
 practice.cpp
 lazy-lock.json
-scripts/clangd-wrapper
+nvim/scripts/clangd-wrapper
