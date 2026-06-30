@@ -10,6 +10,7 @@ return {
       { "<leader>gct", desc = "Choose Theirs" },
       { "<leader>gcb", desc = "Choose Both" },
       { "<leader>gcn", desc = "Choose None" },
+      { "<leader>o", group = "org" },
       { "<leader>t", group = "terminals" },
     },
   },

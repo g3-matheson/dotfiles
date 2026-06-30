@@ -25,7 +25,10 @@ return {
     }
 
     -- PDF Viewer settings
-    vim.g.vimtex_view_method = "zathura"
+    -- Use zathura as a generic external viewer
+    vim.g.vimtex_view_method = "general"
+    vim.g.vimtex_view_general_viewer = "zathura"
+    vim.g.vimtex_view_general_options = "@pdf"
 
     -- Turn off concealing
     vim.g.vimtex_syntax_conceal_disable = 1

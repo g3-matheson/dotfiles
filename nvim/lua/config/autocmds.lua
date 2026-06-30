@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
-    local arg = vim.fn.argv(0)
+    local arg = vim.fn.argv(0) --[[@as string]]
     if arg ~= "" and vim.fn.isdirectory(arg) == 1 then
       vim.cmd("cd " .. vim.fn.fnameescape(vim.fn.fnamemodify(arg, ":p")))
     end
@@ -20,8 +20,15 @@ vim.cmd([[
   autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focus = false })
 ]])
 
+vim.api.nvim_create_autocmd("BufAdd", {
+  pattern = "*.org",
+  callback = function()
+    require("orgmode").files:load()
+  end,
+})
+
 -- turn off auto formatting for cpp and python
-local no_autoformat_fts = { "c", "cpp", "cuda", "objc", "objcpp", "proto", "python" }
+local no_autoformat_fts = { "c", "cpp", "cuda", "objc", "objcpp", "proto", "python", "sh", "zsh" }
 vim.api.nvim_create_autocmd("FileType", {
   pattern = no_autoformat_fts,
   callback = function(ev)
