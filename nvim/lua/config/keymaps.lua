@@ -43,6 +43,10 @@ vim.keymap.set("n", "<leader>gD", function()
   Snacks.picker.git_diff({ cwd = Snacks.git.get_root(0) or vim.fn.getcwd(), base = "origin", group = true })
 end, { desc = "Git Diff (origin)" })
 
+vim.keymap.set("n", "<leader>gq", function()
+  Snacks.picker.git_diff({ cwd = Snacks.git.get_root(0) or vim.fn.getcwd(), base = "HEAD~1", group = true })
+end, { desc = "Git Diff (last commit)" })
+
 -- git clang-format
 vim.keymap.set("n", "<leader>cg", function()
   vim.cmd("write")
